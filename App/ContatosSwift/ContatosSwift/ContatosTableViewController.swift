@@ -16,13 +16,15 @@ class ContatosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.delegate = self
+        self.tableView.separatorStyle = .None
+        
+        
         obterDados()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let nib = UINib(nibName: "ContatoCell", bundle: NSBundle.mainBundle())
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "celulaCustom")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,17 +77,22 @@ class ContatosTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("celulaPadrao", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("celulaCustom", forIndexPath: indexPath) as! ContatoCell
         
         let user = self.usuarios![indexPath.row]
         
-        cell.textLabel?.text = user.name
-        cell.detailTextLabel?.text = user.username
-    
+        cell.configurar(user)
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 300
+    }
 
     /*
     // Override to support conditional editing of the table view.

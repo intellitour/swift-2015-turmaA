@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03BB561D5A96660048A2A5 /* ContatoCell.swift */; };
+		EB03BB591D5A96660048A2A5 /* ContatoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB03BB571D5A96660048A2A5 /* ContatoCell.xib */; };
 		EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2E991D515747006705AE /* AppDelegate.swift */; };
 		EB6F2E9F1D515747006705AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6F2E9D1D515747006705AE /* Main.storyboard */; };
 		EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2EA01D515747006705AE /* ContatosSwift.xcdatamodeld */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB03BB561D5A96660048A2A5 /* ContatoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatoCell.swift; sourceTree = "<group>"; };
+		EB03BB571D5A96660048A2A5 /* ContatoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatoCell.xib; sourceTree = "<group>"; };
 		EB6F2E961D515747006705AE /* ContatosSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6F2E991D515747006705AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB6F2E9E1D515747006705AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB03BB551D5A95BE0048A2A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB03BB561D5A96660048A2A5 /* ContatoCell.swift */,
+				EB03BB571D5A96660048A2A5 /* ContatoCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		EB6F2E8D1D515747006705AE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		EB6F2EB11D5160BD006705AE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EB03BB551D5A95BE0048A2A5 /* Cell */,
 				EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */,
 			);
 			name = ViewController;
@@ -144,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB03BB591D5A96660048A2A5 /* ContatoCell.xib in Resources */,
 				EB6F2EA71D515747006705AE /* LaunchScreen.storyboard in Resources */,
 				EB6F2EA41D515747006705AE /* Assets.xcassets in Resources */,
 				EB6F2E9F1D515747006705AE /* Main.storyboard in Resources */,
@@ -159,6 +174,7 @@
 			files = (
 				EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */,
 				EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */,
+				EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */,
 				EB6F2EB31D5160EA006705AE /* ContatosTableViewController.swift in Sources */,
 				EB6F2EB01D515AFA006705AE /* User.swift in Sources */,
 			);
@@ -312,6 +328,7 @@
 				EB6F2EAD1D515747006705AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
