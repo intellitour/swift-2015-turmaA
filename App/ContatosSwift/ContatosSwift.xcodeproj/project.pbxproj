@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03BB561D5A96660048A2A5 /* ContatoCell.swift */; };
 		EB03BB591D5A96660048A2A5 /* ContatoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB03BB571D5A96660048A2A5 /* ContatoCell.xib */; };
+		EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5186AB1D5B68120028E975 /* Extensions.swift */; };
+		EB5186AE1D5B72550028E975 /* ModelErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5186AD1D5B72550028E975 /* ModelErrors.swift */; };
 		EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2E991D515747006705AE /* AppDelegate.swift */; };
 		EB6F2E9F1D515747006705AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6F2E9D1D515747006705AE /* Main.storyboard */; };
 		EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2EA01D515747006705AE /* ContatosSwift.xcdatamodeld */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		EB03BB561D5A96660048A2A5 /* ContatoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatoCell.swift; sourceTree = "<group>"; };
 		EB03BB571D5A96660048A2A5 /* ContatoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatoCell.xib; sourceTree = "<group>"; };
+		EB5186AB1D5B68120028E975 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EB5186AD1D5B72550028E975 /* ModelErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelErrors.swift; sourceTree = "<group>"; };
 		EB6F2E961D515747006705AE /* ContatosSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6F2E991D515747006705AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB6F2E9E1D515747006705AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +54,14 @@
 				EB03BB571D5A96660048A2A5 /* ContatoCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		EB5186AA1D5B67FD0028E975 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB5186AB1D5B68120028E975 /* Extensions.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		EB6F2E8D1D515747006705AE = {
@@ -87,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				EB6F2EAF1D515AFA006705AE /* User.swift */,
+				EB5186AD1D5B72550028E975 /* ModelErrors.swift */,
 			);
 			name = Modelo;
 			sourceTree = "<group>";
@@ -94,6 +107,7 @@
 		EB6F2EB11D5160BD006705AE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EB5186AA1D5B67FD0028E975 /* Extension */,
 				EB03BB551D5A95BE0048A2A5 /* Cell */,
 				EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */,
 			);
@@ -173,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */,
+				EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */,
 				EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */,
+				EB5186AE1D5B72550028E975 /* ModelErrors.swift in Sources */,
 				EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */,
 				EB6F2EB31D5160EA006705AE /* ContatosTableViewController.swift in Sources */,
 				EB6F2EB01D515AFA006705AE /* User.swift in Sources */,

@@ -44,13 +44,18 @@ class ContatoCell: UITableViewCell {
         let urlString = "http://lorempixel.com/\(Int(tamanho))/\(Int(tamanho))/people/"
         
         let url = NSURL(string: urlString)
-        let imgData = NSData(contentsOfURL: url!)
-        let img = UIImage(data: imgData!)
-        
-        profilePictureImageView.image = img
+        profilePictureImageView.carregarAssincrono(url!)
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        let vazio = ""
+        nameLabel.text = vazio
+        emailLabel.text = vazio
+        phoneLabel.text = vazio
+        profilePictureImageView.image = nil
+    }
     
 
     override func setSelected(selected: Bool, animated: Bool) {

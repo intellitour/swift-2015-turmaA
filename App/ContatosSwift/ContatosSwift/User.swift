@@ -6,20 +6,22 @@
 //  Copyright © 2016 IESB. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct Geo {
     var lat: Double?
     var lng: Double?
     
-    init(dict: [String: AnyObject]) {
-        if let lat = dict["lat"] as? String {
-            self.lat = Double(lat)
+    init(dict: [String: AnyObject]) throws {
+        guard let lat = dict["lat"] as? String else {
+            throw GeoInitError.MissingLatitude
         }
+        self.lat = Double(lat)
         
-        if let lng = dict["lng"] as? String {
-            self.lng = Double(lng)
+        guard let lng = dict["lng"] as? String else {
+            throw GeoInitError.MissingLongitude
         }
+        self.lng = Double(lng)
     }
     
     func asDictionary() -> [String: AnyObject] {
@@ -39,26 +41,31 @@ struct Address {
     var zipcode: String?
     var geo: Geo?
     
-    init(dict: [String: AnyObject]) {
-        if let street = dict["street"] as? String {
-            self.street = street
+    init(dict: [String: AnyObject]) throws {
+        guard let street = dict["street"] as? String else {
+            throw AddressInitError.MissingStreet
         }
+        self.street = street
         
-        if let suite = dict["suite"] as? String {
-            self.suite = suite
+        guard let suite = dict["suite"] as? String else {
+            throw AddressInitError.MissingSuite
         }
+        self.suite = suite
         
-        if let city = dict["city"] as? String {
-            self.city = city
+        guard let city = dict["city"] as? String else {
+            throw AddressInitError.MissingCity
         }
+        self.city = city
         
-        if let zip = dict["zipcode"] as? String {
-            self.zipcode = zip
+        guard let zip = dict["zipcode"] as? String else {
+            throw AddressInitError.MissingZipcode
         }
+        self.zipcode = zip
         
-        if let geo = dict["geo"] as? [String: AnyObject] {
-            self.geo = Geo(dict: geo)
+        guard let geo = dict["geo"] as? [String: AnyObject] else {
+            throw AddressInitError.MissingGeo
         }
+        self.geo = try Geo(dict: geo)
     }
     
     func asDictionary() -> [String: AnyObject] {
@@ -79,19 +86,22 @@ struct Company {
     var catchPhrase: String?
     var bs: String?
     
-    init(dict: [String: AnyObject]) {
+    init(dict: [String: AnyObject]) throws {
         
-        if let name = dict["name"] as? String {
-            self.name = name
+        guard let name = dict["name"] as? String else {
+            throw CompanyInitError.MissingName
         }
+        self.name = name
         
-        if let catchPhrase = dict["catchPhrase"] as? String {
-            self.catchPhrase = catchPhrase
+        guard let catchPhrase = dict["catchPhrase"] as? String else {
+            throw CompanyInitError.MissingCatchPhrase
         }
+        self.catchPhrase = catchPhrase
         
-        if let bs = dict["bs"] as? String {
-            self.bs = bs
+        guard let bs = dict["bs"] as? String else {
+            throw CompanyInitError.MissingBs
         }
+        self.bs = bs
     }
     
     func asDictionary() -> [String: AnyObject] {
@@ -119,39 +129,47 @@ class User {
     
     var company: Company?
     
-    init(dict: [String: AnyObject]) {
+    init(dict: [String: AnyObject]) throws {
         
-        if let identifier = dict["id"] as? Int {
-            self.identifier = identifier
+        guard let identifier = dict["id"] as? Int else {
+            throw UserInitError.MissingIdentifier
         }
+        self.identifier = identifier
         
-        if let name = dict["name"] as? String {
-            self.name = name
+        guard let name = dict["name"] as? String else {
+            throw UserInitError.MissingName
         }
+        self.name = name
         
-        if let username = dict["username"] as? String {
-            self.username = username
+        guard let username = dict["username"] as? String else {
+            throw UserInitError.MissingUsername
         }
+        self.username = username
         
-        if let email = dict["email"] as? String {
-            self.email = email
+        guard let email = dict["email"] as? String else {
+            throw UserInitError.MissingEmail
         }
+        self.email = email
         
-        if let address = dict["address"] as? [String: AnyObject] {
-            self.address = Address(dict: address)
+        guard let address = dict["address"] as? [String: AnyObject] else {
+            throw UserInitError.MissingAddress
         }
+        self.address = try Address(dict: address)
         
-        if let phone = dict["phone"] as? String {
-            self.phone = phone
+        guard let phone = dict["phone"] as? String else {
+            throw UserInitError.MissingPhone
         }
+        self.phone = phone
         
-        if let website = dict["website"] as? String {
-            self.website = website
+        guard let website = dict["website"] as? String else {
+            throw UserInitError.MissingWebsite
         }
+        self.website = website
         
-        if let company = dict["company"] as? [String: AnyObject] {
-            self.company = Company(dict: company)
+        guard let company = dict["company"] as? [String: AnyObject] else {
+            throw UserInitError.MissingCompany
         }
+        self.company = try Company(dict: company)
      }
     
     func asDictionary() -> [String: AnyObject] {

@@ -50,12 +50,24 @@ class ContatosTableViewController: UITableViewController {
             do {
                 json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? Array
             }catch {
-                print(error)
+                print("Erro ao converter o JSON.")
             }
             self.usuarios = [User]()
             for item in json {
-                let user = User(dict: item)
-                self.usuarios?.append(user)
+                do {
+                    let user = try User(dict: item)
+                    self.usuarios?.append(user)
+                }catch let error as UserInitError {
+                    print(error)
+                }catch let error as GeoInitError {
+                    print(error)
+                }catch let error as AddressInitError {
+                    print(error)
+                }catch let error as CompanyInitError {
+                    print(error)
+                }catch {
+                    print("Erro inesperado")
+                }
             }
             print("Recebidos os usuários: \(self.usuarios)")
             
