@@ -129,6 +129,10 @@ class User {
     
     var company: Company?
     
+    init() {
+        
+    }
+    
     init(dict: [String: AnyObject]) throws {
         
         guard let identifier = dict["id"] as? Int else {

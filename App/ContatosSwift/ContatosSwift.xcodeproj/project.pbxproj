@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8ADE46E66561C0229B886D0 /* Pods_ContatosSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919A918D9685E8094F360734 /* Pods_ContatosSwift.framework */; };
 		EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03BB561D5A96660048A2A5 /* ContatoCell.swift */; };
 		EB03BB591D5A96660048A2A5 /* ContatoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB03BB571D5A96660048A2A5 /* ContatoCell.xib */; };
 		EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5186AB1D5B68120028E975 /* Extensions.swift */; };
@@ -18,9 +19,13 @@
 		EB6F2EA71D515747006705AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6F2EA51D515747006705AE /* LaunchScreen.storyboard */; };
 		EB6F2EB01D515AFA006705AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2EAF1D515AFA006705AE /* User.swift */; };
 		EB6F2EB31D5160EA006705AE /* ContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */; };
+		EBE1F97D1D63DE2D003997C3 /* FormularioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE1F97C1D63DE2D003997C3 /* FormularioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D49715A51DF7CA40DD4D289 /* Pods-ContatosSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContatosSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift.release.xcconfig"; sourceTree = "<group>"; };
+		919A918D9685E8094F360734 /* Pods_ContatosSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContatosSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E0E3203DEA34B135CEA387 /* Pods-ContatosSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContatosSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		EB03BB561D5A96660048A2A5 /* ContatoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatoCell.swift; sourceTree = "<group>"; };
 		EB03BB571D5A96660048A2A5 /* ContatoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatoCell.xib; sourceTree = "<group>"; };
 		EB5186AB1D5B68120028E975 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		EB6F2EA81D515747006705AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6F2EAF1D515AFA006705AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatosTableViewController.swift; sourceTree = "<group>"; };
+		EBE1F97C1D63DE2D003997C3 /* FormularioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +47,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8ADE46E66561C0229B886D0 /* Pods_ContatosSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09872A47CB0DC6E8C06FA118 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2E0E3203DEA34B135CEA387 /* Pods-ContatosSwift.debug.xcconfig */,
+				1D49715A51DF7CA40DD4D289 /* Pods-ContatosSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		44B79FAE98F6DF3CB2A3FCEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				919A918D9685E8094F360734 /* Pods_ContatosSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB03BB551D5A95BE0048A2A5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +93,8 @@
 			children = (
 				EB6F2E981D515747006705AE /* ContatosSwift */,
 				EB6F2E971D515747006705AE /* Products */,
+				09872A47CB0DC6E8C06FA118 /* Pods */,
+				44B79FAE98F6DF3CB2A3FCEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +136,7 @@
 				EB5186AA1D5B67FD0028E975 /* Extension */,
 				EB03BB551D5A95BE0048A2A5 /* Cell */,
 				EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */,
+				EBE1F97C1D63DE2D003997C3 /* FormularioViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -121,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB6F2EAB1D515747006705AE /* Build configuration list for PBXNativeTarget "ContatosSwift" */;
 			buildPhases = (
+				743ECB5B0102DF48D2795C67 /* [CP] Check Pods Manifest.lock */,
 				EB6F2E921D515747006705AE /* Sources */,
 				EB6F2E931D515747006705AE /* Frameworks */,
 				EB6F2E941D515747006705AE /* Resources */,
+				C21AA40ABE5C54A7A5D0583E /* [CP] Embed Pods Frameworks */,
+				B87531FCDDC12E22484CCA45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,11 +211,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		743ECB5B0102DF48D2795C67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B87531FCDDC12E22484CCA45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C21AA40ABE5C54A7A5D0583E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB6F2E921D515747006705AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE1F97D1D63DE2D003997C3 /* FormularioViewController.swift in Sources */,
 				EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */,
 				EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */,
 				EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */,
@@ -305,8 +384,10 @@
 		};
 		EB6F2EAC1D515747006705AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2E0E3203DEA34B135CEA387 /* Pods-ContatosSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ContatosSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.iesb.ContatosSwift;
@@ -316,8 +397,10 @@
 		};
 		EB6F2EAD1D515747006705AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D49715A51DF7CA40DD4D289 /* Pods-ContatosSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ContatosSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.iesb.ContatosSwift;

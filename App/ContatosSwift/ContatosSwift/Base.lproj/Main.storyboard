@@ -59,7 +59,7 @@
         <!--Adicionar Contato-->
         <scene sceneID="hWg-E1-6Ca">
             <objects>
-                <tableViewController id="2ZJ-aa-PIw" sceneMemberID="viewController">
+                <tableViewController id="2ZJ-aa-PIw" customClass="FormularioViewController" customModule="ContatosSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="F3b-Cz-dtb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="uZZ-aJ-0Un"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -118,7 +118,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="kxg-8q-CRb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -150,7 +150,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="4KE-e6-ylW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -182,7 +182,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="jMg-8x-VRe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -214,7 +214,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="O8H-V2-Pxc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -244,13 +244,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rax-d2-Hpi">
-                                                    <rect key="frame" x="12" y="48" width="576" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rax-d2-Hpi">
+                                                    <rect key="frame" x="13" y="47" width="576" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0DQ-Ux-r6t"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -282,7 +282,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="0b4-v2-oJQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -314,7 +314,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Rev-Xy-zoy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -346,7 +346,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="ErB-KA-Ewh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -378,7 +378,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="CwD-Rl-egJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -410,7 +410,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Kqx-zr-Scx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -446,7 +446,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="rle-NG-M3s"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -478,7 +478,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Tca-KY-knf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -510,7 +510,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="M2J-BT-RiV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -531,7 +531,29 @@
                             <outlet property="delegate" destination="2ZJ-aa-PIw" id="XnC-Wz-Oh1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Adicionar Contato" id="PVa-lt-Rip"/>
+                    <navigationItem key="navigationItem" title="Adicionar Contato" id="PVa-lt-Rip">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="aBn-BG-cU0">
+                            <connections>
+                                <action selector="onSave:" destination="2ZJ-aa-PIw" id="DL6-nL-twR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="campoBs" destination="4HU-qY-Pi0" id="MXx-Q0-WEY"/>
+                        <outlet property="campoCep" destination="kj5-wg-Adm" id="h1Y-7h-RQu"/>
+                        <outlet property="campoCidade" destination="rax-d2-Hpi" id="EEU-MJ-06D"/>
+                        <outlet property="campoEmail" destination="nUC-PL-7Y5" id="UeW-Av-c7W"/>
+                        <outlet property="campoEmpresa" destination="LF8-C9-zKR" id="wqY-UP-kgm"/>
+                        <outlet property="campoLat" destination="KTJ-Gq-cdf" id="i1G-Ot-02Y"/>
+                        <outlet property="campoLng" destination="dHZ-Nw-9Ku" id="LnO-Z3-UY3"/>
+                        <outlet property="campoLogin" destination="UBD-m4-RYY" id="ulD-ek-5zw"/>
+                        <outlet property="campoLogradouro" destination="Q7H-Rz-gGr" id="luF-lI-HNp"/>
+                        <outlet property="campoNome" destination="HLK-Zj-kyU" id="6Bq-jV-Oa6"/>
+                        <outlet property="campoNumero" destination="U6p-7I-VKM" id="Qsq-EN-g9E"/>
+                        <outlet property="campoSite" destination="b6g-lv-boP" id="xv6-wl-Wyr"/>
+                        <outlet property="campoSlogan" destination="g4C-CE-aMJ" id="Bce-z1-uiy"/>
+                        <outlet property="campoTelefone" destination="gWo-33-tQx" id="BOp-cg-6bQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-V2-IcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
