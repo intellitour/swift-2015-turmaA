@@ -14,6 +14,11 @@ extension String {
         let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailPattern).evaluateWithObject(self)
     }
+    
+    func isNumber() -> Bool {
+        let numberCharacters = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        return !self.isEmpty && self.rangeOfCharacterFromSet(numberCharacters) == nil
+    }
 }
 
 extension UIImageView {

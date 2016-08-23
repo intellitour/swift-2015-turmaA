@@ -107,13 +107,99 @@ class FormularioViewController: UITableViewController, UITextFieldDelegate {
         
         return true
     }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (string == "") {
+            return true
+        }
+        
+        if (textField == campoTelefone) {
+            return string.isNumber()
+        }
+        
+        if (textField == campoLat || textField == campoLng) {
+            if (textField.text == "") {
+                return string == "-" || string == "+"
+            }
+            if (textField == campoLat && textField.text?.characters.count == 3) { //latitude varia entre +90 e -90
+                return string == "."
+            }
+            if (textField == campoLng && textField.text?.characters.count == 4) { //longitude varia entre +180 e -180
+                return string == "."
+            }
+            return string.isNumber()
+        }
+        return true
+    }
+    
     
     @IBAction func onSave(sender: UIBarButtonItem) {
-        let user = User()
-        
-        user.name = campoNome.text
-        
-        
+        do {
+            var posicao: Geo?
+            var endereco: Address?
+            var empresa: Company?
+            var user: User?
+            
+            if let lat = campoLat.text {
+                if let lng = campoLng.text {
+                    
+                    if let latitude = Double(lat) {
+                        if let longitude = Double(lng) {
+                            posicao = try Geo(lat: latitude, lng: longitude)
+                        }
+                    }
+                }
+            }
+            
+            if let street = campoLogradouro.text {
+                if let suite = campoNumero.text {
+                    if let city = campoCidade.text {
+                        if let zip = campoCep.text {
+                            if let geo = posicao {
+                                endereco = try Address(street: street, suite: suite, city: city, zipcode: zip, geo: geo)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if let nomeEmpresa = campoEmpresa.text {
+                if let frase = campoSlogan.text {
+                    if let bs = campoBs.text {
+                        empresa = try Company(name: nomeEmpresa, catchPhrase: frase, bs: bs)
+                    }
+                }
+            }
+            
+            if let nome = campoNome.text {
+                if let login = campoLogin.text {
+                    if let email = campoEmail.text {
+                        if let phone = campoTelefone.text {
+                            if let site = campoSite.text {
+                                if let address = endereco {
+                                    if let company = empresa {
+                                        user = try User(name: nome, username: login, email: email, address: address, phone: phone, website: site, company: company)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if let usuario = user {
+                print(usuario.asDictionary())
+            }else {
+                print("Faltando algum campo!");
+            }
+            
+        }catch let error {
+            print(error)
+            
+            let ac = UIAlertController(title: "Erro", message: String(error), preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            
+            self.presentViewController(ac, animated: true, completion: nil)
+        }
     }
 
     /*

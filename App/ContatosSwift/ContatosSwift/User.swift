@@ -12,7 +12,24 @@ struct Geo {
     var lat: Double?
     var lng: Double?
     
+    init() {
+    }
+    
+    init(lat: Double, lng: Double) throws {
+        guard (lat < 90 && lat > -90) else {
+            throw GeoInitError.InvalidLatitude
+        }
+        self.lat = lat
+        
+        guard (lng < 180 && lng > -180) else {
+            throw GeoInitError.InvalidLongitude
+        }
+        self.lng = lng
+    }
+    
     init(dict: [String: AnyObject]) throws {
+        self.init()
+        
         guard let lat = dict["lat"] as? String else {
             throw GeoInitError.MissingLatitude
         }
@@ -41,7 +58,36 @@ struct Address {
     var zipcode: String?
     var geo: Geo?
     
+    init() {
+    }
+    
+    init(street: String, suite: String, city: String, zipcode: String, geo: Geo) throws {
+        guard street.characters.count > 0 else {
+            throw AddressInitError.MissingStreet
+        }
+        self.street = street;
+        
+        guard suite.characters.count > 0 else {
+            throw AddressInitError.MissingSuite
+        }
+        self.suite = suite
+        
+        guard city.characters.count > 0 else {
+            throw AddressInitError.MissingCity
+        }
+        self.city = city
+        
+        guard zipcode.characters.count > 0 else {
+            throw AddressInitError.MissingZipcode
+        }
+        self.zipcode = zipcode
+        
+        self.geo = geo
+    }
+    
     init(dict: [String: AnyObject]) throws {
+        self.init()
+        
         guard let street = dict["street"] as? String else {
             throw AddressInitError.MissingStreet
         }
@@ -86,7 +132,28 @@ struct Company {
     var catchPhrase: String?
     var bs: String?
     
+    init() {
+    }
+    
+    init(name: String, catchPhrase: String, bs: String) throws {
+        guard name.characters.count > 0 else {
+            throw CompanyInitError.MissingName
+        }
+        self.name = name
+        
+        guard catchPhrase.characters.count > 0 else {
+            throw CompanyInitError.MissingCatchPhrase
+        }
+        self.catchPhrase = catchPhrase
+        
+        guard bs.characters.count > 0 else {
+            throw CompanyInitError.MissingBs
+        }
+        self.bs = bs
+    }
+    
     init(dict: [String: AnyObject]) throws {
+        self.init()
         
         guard let name = dict["name"] as? String else {
             throw CompanyInitError.MissingName
@@ -130,10 +197,48 @@ class User {
     var company: Company?
     
     init() {
-        
+        self.identifier = Int(arc4random() % UInt32.max)
     }
     
-    init(dict: [String: AnyObject]) throws {
+    init(name: String, username: String, email: String, address: Address,
+                       phone: String, website: String, company: Company) throws {
+        
+        self.identifier = Int(arc4random() % UInt32.max)
+        
+        guard name.characters.count > 0 else {
+            throw UserInitError.NameIsRequired
+        }
+        self.name = name
+        
+        guard email.characters.count > 0 else {
+            throw UserInitError.EmailIsRequired
+        }
+        guard email.isValidEmail() else {
+            throw UserInitError.EmailIsInvalid
+        }
+        self.email = email
+        
+        guard phone.characters.count > 0 else {
+            throw UserInitError.PhoneIsRequired
+        }
+        self.phone = phone
+        
+        guard website.characters.count > 0 else {
+            throw UserInitError.WebsiteIsRequired
+        }
+        guard let site = NSURL(string: website) else {
+            throw UserInitError.WebsiteIsInvalid
+        }
+        self.website = site.absoluteString
+        
+        self.address = address
+        self.company = company
+    }
+    
+    
+    
+    convenience init(dict: [String: AnyObject]) throws {
+        self.init()
         
         guard let identifier = dict["id"] as? Int else {
             throw UserInitError.MissingIdentifier
