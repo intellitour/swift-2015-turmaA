@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D8ADE46E66561C0229B886D0 /* Pods_ContatosSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919A918D9685E8094F360734 /* Pods_ContatosSwift.framework */; };
+		EB033C5C1D6D241700B782B5 /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C541D6D241700B782B5 /* Usuario+CoreDataProperties.swift */; };
+		EB033C5D1D6D241700B782B5 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C551D6D241700B782B5 /* Usuario.swift */; };
+		EB033C5E1D6D241700B782B5 /* Geolocalizacao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C561D6D241700B782B5 /* Geolocalizacao+CoreDataProperties.swift */; };
+		EB033C5F1D6D241700B782B5 /* Geolocalizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C571D6D241700B782B5 /* Geolocalizacao.swift */; };
+		EB033C601D6D241700B782B5 /* Empresa+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C581D6D241700B782B5 /* Empresa+CoreDataProperties.swift */; };
+		EB033C611D6D241700B782B5 /* Empresa.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C591D6D241700B782B5 /* Empresa.swift */; };
+		EB033C621D6D241700B782B5 /* Endereco+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C5A1D6D241700B782B5 /* Endereco+CoreDataProperties.swift */; };
+		EB033C631D6D241700B782B5 /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C5B1D6D241700B782B5 /* Endereco.swift */; };
+		EB033C661D6D249C00B782B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB033C651D6D249C00B782B5 /* PersistenceController.swift */; };
 		EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03BB561D5A96660048A2A5 /* ContatoCell.swift */; };
 		EB03BB591D5A96660048A2A5 /* ContatoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB03BB571D5A96660048A2A5 /* ContatoCell.xib */; };
 		EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5186AB1D5B68120028E975 /* Extensions.swift */; };
 		EB5186AE1D5B72550028E975 /* ModelErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5186AD1D5B72550028E975 /* ModelErrors.swift */; };
+		EB6BE5ED1D7F984E002A926D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6BE5EC1D7F984E002A926D /* MapaViewController.swift */; };
 		EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2E991D515747006705AE /* AppDelegate.swift */; };
 		EB6F2E9F1D515747006705AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB6F2E9D1D515747006705AE /* Main.storyboard */; };
 		EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB6F2EA01D515747006705AE /* ContatosSwift.xcdatamodeld */; };
@@ -26,10 +36,20 @@
 		1D49715A51DF7CA40DD4D289 /* Pods-ContatosSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContatosSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift.release.xcconfig"; sourceTree = "<group>"; };
 		919A918D9685E8094F360734 /* Pods_ContatosSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContatosSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E0E3203DEA34B135CEA387 /* Pods-ContatosSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContatosSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContatosSwift/Pods-ContatosSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		EB033C541D6D241700B782B5 /* Usuario+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Usuario+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB033C551D6D241700B782B5 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		EB033C561D6D241700B782B5 /* Geolocalizacao+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geolocalizacao+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB033C571D6D241700B782B5 /* Geolocalizacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocalizacao.swift; sourceTree = "<group>"; };
+		EB033C581D6D241700B782B5 /* Empresa+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Empresa+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB033C591D6D241700B782B5 /* Empresa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empresa.swift; sourceTree = "<group>"; };
+		EB033C5A1D6D241700B782B5 /* Endereco+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Endereco+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB033C5B1D6D241700B782B5 /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
+		EB033C651D6D249C00B782B5 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		EB03BB561D5A96660048A2A5 /* ContatoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatoCell.swift; sourceTree = "<group>"; };
 		EB03BB571D5A96660048A2A5 /* ContatoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatoCell.xib; sourceTree = "<group>"; };
 		EB5186AB1D5B68120028E975 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB5186AD1D5B72550028E975 /* ModelErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelErrors.swift; sourceTree = "<group>"; };
+		EB6BE5EC1D7F984E002A926D /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		EB6F2E961D515747006705AE /* ContatosSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6F2E991D515747006705AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB6F2E9E1D515747006705AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +91,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB033C531D6D240000B782B5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EB033C641D6D248300B782B5 /* Entidades */,
+				EB033C651D6D249C00B782B5 /* PersistenceController.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		EB033C641D6D248300B782B5 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				EB033C541D6D241700B782B5 /* Usuario+CoreDataProperties.swift */,
+				EB033C551D6D241700B782B5 /* Usuario.swift */,
+				EB033C561D6D241700B782B5 /* Geolocalizacao+CoreDataProperties.swift */,
+				EB033C571D6D241700B782B5 /* Geolocalizacao.swift */,
+				EB033C581D6D241700B782B5 /* Empresa+CoreDataProperties.swift */,
+				EB033C591D6D241700B782B5 /* Empresa.swift */,
+				EB033C5A1D6D241700B782B5 /* Endereco+CoreDataProperties.swift */,
+				EB033C5B1D6D241700B782B5 /* Endereco.swift */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
 		EB03BB551D5A95BE0048A2A5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +153,7 @@
 		EB6F2E981D515747006705AE /* ContatosSwift */ = {
 			isa = PBXGroup;
 			children = (
+				EB033C531D6D240000B782B5 /* CoreData */,
 				EB6F2EB11D5160BD006705AE /* ViewController */,
 				EB6F2EAE1D515ADC006705AE /* Modelo */,
 				EB6F2E991D515747006705AE /* AppDelegate.swift */,
@@ -137,6 +182,7 @@
 				EB03BB551D5A95BE0048A2A5 /* Cell */,
 				EB6F2EB21D5160EA006705AE /* ContatosTableViewController.swift */,
 				EBE1F97C1D63DE2D003997C3 /* FormularioViewController.swift */,
+				EB6BE5EC1D7F984E002A926D /* MapaViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -266,12 +312,22 @@
 			files = (
 				EBE1F97D1D63DE2D003997C3 /* FormularioViewController.swift in Sources */,
 				EB6F2EA21D515747006705AE /* ContatosSwift.xcdatamodeld in Sources */,
+				EB033C601D6D241700B782B5 /* Empresa+CoreDataProperties.swift in Sources */,
 				EB5186AC1D5B68120028E975 /* Extensions.swift in Sources */,
 				EB6F2E9A1D515747006705AE /* AppDelegate.swift in Sources */,
+				EB033C611D6D241700B782B5 /* Empresa.swift in Sources */,
+				EB033C5E1D6D241700B782B5 /* Geolocalizacao+CoreDataProperties.swift in Sources */,
 				EB5186AE1D5B72550028E975 /* ModelErrors.swift in Sources */,
 				EB03BB581D5A96660048A2A5 /* ContatoCell.swift in Sources */,
+				EB033C621D6D241700B782B5 /* Endereco+CoreDataProperties.swift in Sources */,
+				EB033C661D6D249C00B782B5 /* PersistenceController.swift in Sources */,
 				EB6F2EB31D5160EA006705AE /* ContatosTableViewController.swift in Sources */,
+				EB033C5F1D6D241700B782B5 /* Geolocalizacao.swift in Sources */,
+				EB6BE5ED1D7F984E002A926D /* MapaViewController.swift in Sources */,
 				EB6F2EB01D515AFA006705AE /* User.swift in Sources */,
+				EB033C5D1D6D241700B782B5 /* Usuario.swift in Sources */,
+				EB033C631D6D241700B782B5 /* Endereco.swift in Sources */,
+				EB033C5C1D6D241700B782B5 /* Usuario+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

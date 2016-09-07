@@ -8,11 +8,15 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class ContatosTableViewController: UITableViewController {
     
-    private var usuarios: Array<User>?
+    private var users: [User]?
+    private var usuarios : [Usuario]?
+    private var isRemoto: Bool!
     
+    private var fetchedResultsController: NSFetchedResultsController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,8 @@ class ContatosTableViewController: UITableViewController {
         self.tableView.separatorStyle = .None
         
         
-        obterDados()
+//        obterDados()
+        obterDadosRemoto()
         
         let nib = UINib(nibName: "ContatoCell", bundle: NSBundle.mainBundle())
         self.tableView.registerNib(nib, forCellReuseIdentifier: "celulaCustom")
@@ -34,6 +39,23 @@ class ContatosTableViewController: UITableViewController {
     }
     
     private func obterDados() {
+        if let ctx = AppDelegate.currentPersistenceController().managedObjectContext {
+            let fetchRequest = NSFetchRequest(entityName: "Usuario")
+            fetchRequest.resultType = .CountResultType
+            
+            do {
+                if let resultado = try ctx.executeFetchRequest(fetchRequest).first {
+                    print("Resultado: \(resultado)")
+                }
+                
+            }catch let error {
+                print("Erro ao obter quantidade de registros do banco local: \(error)")
+            }
+            
+        }
+    }
+    
+    private func obterDadosRemoto() {
         let url = NSURL(string: "http://jsonplaceholder.typicode.com/users")
         
         let request = NSMutableURLRequest(URL: url!)
@@ -53,11 +75,11 @@ class ContatosTableViewController: UITableViewController {
             }catch {
                 print("Erro ao converter o JSON.")
             }
-            self.usuarios = [User]()
+            var users = [User]()
             for item in json {
                 do {
                     let user = try User(dict: item)
-                    self.usuarios?.append(user)
+                    users.append(user)
                 }catch let error as UserInitError {
                     print(error)
                 }catch let error as GeoInitError {
@@ -70,7 +92,8 @@ class ContatosTableViewController: UITableViewController {
                     print("Erro inesperado")
                 }
             }
-            print("Recebidos os usuários: \(self.usuarios)")
+            self.users = users
+            print("Recebidos os usuários: \(self.users)")
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.tableView.reloadData()
@@ -81,7 +104,7 @@ class ContatosTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let usuarios = self.usuarios {
+        if let usuarios = self.users {
             return usuarios.count
         }else {
             return 0
@@ -92,7 +115,7 @@ class ContatosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celulaCustom", forIndexPath: indexPath) as! ContatoCell
         
-        let user = self.usuarios![indexPath.row]
+        let user = self.users![indexPath.row]
         
         cell.configurar(user)
         
@@ -106,50 +129,20 @@ class ContatosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 300
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = self.users![indexPath.row]
+        performSegueWithIdentifier("mapaSegue", sender: user);
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "mapaSegue" {
+            let destino = segue.destinationViewController as! MapaViewController
+            destino.user = sender as? User
+        }
     }
-    */
 
 }

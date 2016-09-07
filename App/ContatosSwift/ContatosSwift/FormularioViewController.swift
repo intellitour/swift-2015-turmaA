@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FormularioViewController: UITableViewController, UITextFieldDelegate {
 
@@ -45,7 +46,6 @@ class FormularioViewController: UITableViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -188,6 +188,13 @@ class FormularioViewController: UITableViewController, UITextFieldDelegate {
             
             if let usuario = user {
                 print(usuario.asDictionary())
+                
+                if let ctx = AppDelegate.currentPersistenceController().managedObjectContext {
+                    let usuarioPersistente = NSEntityDescription.insertNewObjectForEntityForName("Usuario", inManagedObjectContext: ctx) as! Usuario
+                    usuarioPersistente.preencherComUser(usuario)
+                    AppDelegate.currentPersistenceController().salvar()
+                }
+                enviarUsuario(usuario)
             }else {
                 print("Faltando algum campo!");
             }
@@ -199,6 +206,36 @@ class FormularioViewController: UITableViewController, UITextFieldDelegate {
             ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(ac, animated: true, completion: nil)
+        }
+    }
+    
+    private func enviarUsuario(usr: User) {
+        let url = NSURL(string: "http://jsonplaceholder.typicode.com/users")
+        
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 30
+        do {
+            let data = try NSJSONSerialization.dataWithJSONObject(usr.asDictionary(), options: .PrettyPrinted)
+            request.HTTPBody = data
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request, completionHandler:
+                { (let data:NSData?, let response:NSURLResponse?,
+                    let error:NSError?) in
+                
+                    if let resp = response as? NSHTTPURLResponse {
+                        if (resp.statusCode == 201) { //http://www.w3.org/Protocols/HTTP/HTRESP.html
+                            print("Deu Certo")
+                        }else {
+                            print("Falhou com status: \(resp.statusCode)")
+                        }
+                    }
+                    
+            })
+            task.resume()
+        }catch let error {
+            print("Erro ao converter JSON: \(error)")
         }
     }
 

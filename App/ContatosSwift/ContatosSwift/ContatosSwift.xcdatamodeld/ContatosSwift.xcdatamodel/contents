@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Empresa" representedClassName=".Empresa" syncable="YES">
+        <attribute name="bs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="catchPhrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Endereco" representedClassName=".Endereco" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="geo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geolocalizacao" syncable="YES"/>
+    </entity>
+    <entity name="Geolocalizacao" representedClassName=".Geolocalizacao" syncable="YES">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Usuario" representedClassName=".Usuario" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Endereco" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empresa" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Geolocalizacao" positionX="-38" positionY="-57" width="128" height="73"/>
+        <element name="Endereco" positionX="34" positionY="78" width="128" height="118"/>
+        <element name="Empresa" positionX="133" positionY="234" width="128" height="88"/>
+        <element name="Usuario" positionX="-72" positionY="276" width="128" height="163"/>
+    </elements>
 </model>
